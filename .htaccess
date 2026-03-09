@@ -1,0 +1,12 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Quan trọng nhất: đặt base đúng tên folder bạn đang dùng
+    RewriteBase /VanPhongPhamLaravel/public/
+
+    # Nếu file hoặc thư mục không tồn tại → chuyển vào index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
